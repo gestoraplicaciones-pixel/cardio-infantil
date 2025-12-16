@@ -2,125 +2,226 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <title>Compensar | Bienestar Integral</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardio Infantil</title>
+
+    <!-- Tipografía similar -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --verde-compensar: #009639;
+            --verde-oscuro: #006b2d;
+            --gris-claro: #f5f6f7;
+            --gris-texto: #4a4a4a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            color: var(--gris-texto);
+            background-color: #ffffff;
         }
 
+        /* Header */
         header {
-            background-color: #00559b;
-            color: white;
-            padding: 20px;
-            text-align: center;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
         }
 
-        nav {
-            background-color: #0074cc;
-            padding: 10px;
-            text-align: center;
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--verde-compensar);
         }
 
         nav a {
-            color: white;
+            margin-left: 24px;
             text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
+            font-weight: 500;
+            color: var(--gris-texto);
         }
 
-        section {
-            padding: 40px 20px;
-            max-width: 1000px;
+        nav a:hover {
+            color: var(--verde-compensar);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(90deg, var(--verde-compensar), var(--verde-oscuro));
+            color: #ffffff;
+            padding: 80px 24px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
             margin: auto;
         }
 
-        section h2 {
-            color: #00559b;
-            margin-bottom: 20px;
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
         }
 
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        /* Sección servicios */
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 64px 24px;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 32px;
+            color: var(--verde-compensar);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--gris-claro);
+            padding: 32px;
+            border-radius: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--verde-oscuro);
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
         footer {
-            background-color: #00559b;
-            color: white;
-            text-align: center;
-            padding: 20px;
+            background: #2b2b2b;
+            color: #ffffff;
+            padding: 32px 24px;
+            margin-top: 64px;
         }
 
-        /* Contenedores para scripts */
-        #webchat-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        #webcall-container {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 2000;
+        .footer-content {
+            max-width: 1200px;
+            margin: auto;
+            font-size: 13px;
+            line-height: 1.6;
         }
     </style>
-
-    <!-- Script Webchat -->
-    <script>
-    (function () {
-        const s = document.createElement("script");
-        s.src = "https://s3.eu-west-1.amazonaws.com/webchat.bundles/channel-bundles/fb67af19-a325-4441-bc17-0830e674e8f6/22002844-b90e-4577-b94a-06b9affa92a9/22002844-b90e-4577-b94a-06b9affa92a9.bundle.js";
-        s.async = true;
-        s.charset = "UTF-8";
-        s.onload = function () { window.Webchat.init(); };
-        document.head.appendChild(s);
-    })();
-    </script>
-
-    <!-- Script Webcall -->
-    <script>
-    (function () {
-        const s = document.createElement("script");
-        s.src = "https://s3.eu-west-1.amazonaws.com/livekit.webcall.bundles/channel-bundles/fb67af19-a325-4441-bc17-0830e674e8f6/261ac038-3811-4cef-ba04-da43c3de759d/261ac038-3811-4cef-ba04-da43c3de759d.bundle.js";
-        s.charset = "UTF-8";
-        s.onload = function () { window.Webcall.init(); };
-        document.head.appendChild(s);
-    })();
-    </script>
 </head>
+
 <body>
-    <header>
-        <h1>Cardio Infantil</h1>
-        <p>Una llamada, una sonrisa</p>
-    </header>
 
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Nosotros</a>
-        <a href="#">Servicios</a>
-        <a href="#">Contacto</a>
-    </nav>
+<header>
+    <div class="header-container">
+        <div class="logo">Compensar</div>
+        <nav>
+            <a href="#">Salud</a>
+            <a href="#">Educación</a>
+            <a href="#">Recreación</a>
+            <a href="#">Vivienda</a>
+            <a href="#">Empresa</a>
+        </nav>
+    </div>
+</header>
 
-    <section>
-        <h2>Bienvenidos</h2>
-        <p>Simulación de contenido similar a la página original de La Cardio.</p>
-    </section>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Bienestar integral para ti y tu familia</h1>
+        <p>
+            En Compensar trabajamos para acompañarte en cada etapa de tu vida,
+            con servicios pensados para tu bienestar, salud y desarrollo.
+        </p>
+    </div>
+</section>
 
-    <section>
-        <h2>Servicios</h2>
-        <ul>
-            <li>Cardiología infantil</li>
-            <li>Chequeos preventivos</li>
-            <li>Consultas especializadas</li>
-        </ul>
-    </section>
+<section class="section">
+    <h2>Nuestros servicios</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Salud</h3>
+            <p>Atención médica, prevención y bienestar integral para ti y tu familia.</p>
+        </div>
+        <div class="card">
+            <h3>Subsidios y beneficios</h3>
+            <p>Apoyos económicos y programas diseñados para mejorar tu calidad de vida.</p>
+        </div>
+        <div class="card">
+            <h3>Educación</h3>
+            <p>Formación y aprendizaje para todas las etapas de la vida.</p>
+        </div>
+        <div class="card">
+            <h3>Recreación y turismo</h3>
+            <p>Espacios, viajes y actividades para disfrutar y compartir.</p>
+        </div>
+    </div>
+</section>
 
-    <footer>
-        &copy; 2025 Cardio Infantil. Todos los derechos reservados.
-    </footer>
+<footer>
+    <div class="footer-content">
+        © Compensar - Caja de Compensación Familiar<br>
+        Este sitio es una maqueta visual para fines de demostración.
+    </div>
+</footer>
 
-    <div id="webchat-container"></div>
-    <div id="webcall-container"></div>
+<!-- Webchat -->
+<script>
+(function () {
+    const s = document.createElement("script");
+    s.src = "https://s3.eu-west-1.amazonaws.com/webchat.bundles/channel-bundles/fb67af19-a325-4441-bc17-0830e674e8f6/61c136aa-f223-473a-a98d-3d595dabd45f/61c136aa-f223-473a-a98d-3d595dabd45f.bundle.js";
+    s.async = true;
+    s.charset = "UTF-8";
+    s.onload = function () {
+        window.Webchat.init();
+    };
+    document.head.appendChild(s);
+})();
+</script>
+
+<!-- Webcall -->
+<script>
+(function () {
+    const s = document.createElement("script");
+    s.src = "https://s3.eu-west-1.amazonaws.com/livekit.webcall.bundles/channel-bundles/fb67af19-a325-4441-bc17-0830e674e8f6/833d5894-1ea2-429d-b88d-487b80e32513/833d5894-1ea2-429d-b88d-487b80e32513.bundle.js";
+    s.charset = "UTF-8";
+    s.onload = function () {
+        window.Webcall.init();
+    };
+    document.head.appendChild(s);
+})();
+</script>
+
 </body>
 </html>
